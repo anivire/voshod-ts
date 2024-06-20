@@ -40,18 +40,22 @@ export const ImageGallery: FC<Props> = ({ images }) => {
             />
           ))}
         </div>
-        <button
-          onClick={prevImage}
-          className="absolute left-0 top-1/2 mx-3 -translate-y-1/2 transform rounded-full bg-zinc-900 p-3"
-        >
-          <RiArrowLeftLine />
-        </button>
-        <button
-          onClick={nextImage}
-          className="absolute right-0 top-1/2 mx-3 -translate-y-1/2 transform rounded-full bg-zinc-900 p-3"
-        >
-          <RiArrowRightLine />
-        </button>
+        {images.length > 1 && (
+          <>
+            <button
+              onClick={prevImage}
+              className="absolute left-0 top-1/2 mx-3 -translate-y-1/2 transform rounded-full bg-zinc-900 p-3"
+            >
+              <RiArrowLeftLine />
+            </button>
+            <button
+              onClick={nextImage}
+              className="absolute right-0 top-1/2 mx-3 -translate-y-1/2 transform rounded-full bg-zinc-900 p-3"
+            >
+              <RiArrowRightLine />
+            </button>
+          </>
+        )}
       </div>
     </>
   );
